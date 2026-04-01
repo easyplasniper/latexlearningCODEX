@@ -2,10 +2,11 @@
 \usepackage[margin=2.2cm]{geometry} % 设置页边距
 \usepackage{xcolor} % 颜色支持
 \usepackage{hyperref} % 超链接
+\usepackage{subfiles} % 允许课程文件既能被主文件引入，也能单独编译
 \usepackage{enumitem} % 更紧凑的列表
 \usepackage{longtable} % 跨页表格
 \usepackage{array} % 表格列格式增强
-\usepackage{fancyvrb} % 更适合展示代码块
+\usepackage{fvextra} % 更稳定地展示可自动换行的代码块
 
 \hypersetup{
   colorlinks=true,
@@ -23,6 +24,7 @@
   frame=single,
   breaklines=true
 }
+\DefineShortVerb{\`}
 
 \title{LaTeX / Overleaf 零基础动手课程}
 \author{latexlearningCODEX}
@@ -64,13 +66,13 @@
 \tableofcontents
 \newpage
 
-\input{lessons/lesson01_first_document}
-\input{lessons/lesson02_document_structure}
-\input{lessons/lesson03_sections_and_text}
-\input{lessons/lesson04_math_basics}
-\input{lessons/lesson05_figures}
-\input{lessons/lesson06_tables}
-\input{lessons/lesson07_references_and_bib}
-\input{lessons/lesson08_final_mini_report}
+\subfile{lessons/lesson01_first_document}
+\subfile{lessons/lesson02_document_structure}
+\subfile{lessons/lesson03_sections_and_text}
+\subfile{lessons/lesson04_math_basics}
+\subfile{lessons/lesson05_figures}
+\subfile{lessons/lesson06_tables}
+\subfile{lessons/lesson07_references_and_bib}
+\subfile{lessons/lesson08_final_mini_report}
 
 \end{document}

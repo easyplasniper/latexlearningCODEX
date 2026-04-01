@@ -1,26 +1,27 @@
-# LaTeX auxiliary files
+# LaTeX 编译产物
+*.pdf
 *.aux
 *.log
 *.out
 *.toc
-*.lof
-*.lot
 *.bbl
 *.blg
 *.synctex.gz
 *.fdb_latexmk
 *.fls
-*.nav
-*.snm
-*.vrb
+*.xdv
 
-# Backup files
+# 编辑器文件
+*.swp
+*.swo
 *~
-*.bak
+.vscode/
+.idea/
 
-# Temporary files
-*.tmp
-
-# OS generated files
+# 系统文件
 .DS_Store
 Thumbs.db
+
+# 临时文件
+*.tmp
+*.bak

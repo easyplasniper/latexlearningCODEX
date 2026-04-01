@@ -1,7 +1,11 @@
 \documentclass[12pt,a4paper]{ctexart} % 中文文档类
 \usepackage{hyperref} % 让引用和目录更友好
 \usepackage[backend=biber,style=numeric]{biblatex} % 使用 biblatex 管理参考文献
-\addbibresource{bib/references.bib} % 从项目根目录的 bib 文件夹读取文献
+\IfFileExists{examples/references.bib}{%
+  \addbibresource{examples/references.bib} % 从项目根目录编译时使用这个路径
+}{%
+  \addbibresource{references.bib} % 从 examples/ 目录编译时使用同目录镜像
+}
 
 \begin{document}
 

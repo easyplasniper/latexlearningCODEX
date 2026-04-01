@@ -4,7 +4,11 @@
 \usepackage{graphicx} % 图片支持
 \usepackage{hyperref} % 交叉引用与链接
 \usepackage[backend=biber,style=numeric]{biblatex} % 参考文献管理
-\addbibresource{bib/references.bib} % 读取项目里的文献库
+\IfFileExists{examples/references.bib}{%
+  \addbibresource{examples/references.bib} % 从项目根目录编译时使用这个路径
+}{%
+  \addbibresource{references.bib} % 从 examples/ 目录编译时使用同目录镜像
+}
 
 \title{用 LaTeX 记录一次简单实验} % 报告标题
 \author{你的名字} % 作者
