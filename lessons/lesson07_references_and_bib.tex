@@ -1,0 +1,73 @@
+\section{第 7 课：交叉引用与参考文献}
+
+\subsection*{本课目标}
+
+\begin{itemize}
+  \item 学会用 `\label` 和 `\ref` 进行交叉引用。
+  \item 学会用 `\cite` 引用参考文献。
+  \item 知道为什么参考文献通常需要多轮编译。
+\end{itemize}
+
+\subsection*{最小可运行示例}
+
+\begin{CodeBlock}
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage{hyperref} % 让引用更容易点击
+\usepackage[backend=biber,style=numeric]{biblatex} % 参考文献管理
+\addbibresource{bib/references.bib} % 引入 bib 文件
+
+\begin{document}
+\section{实验说明}
+如文献~\cite{lamport1994latex} 所示，LaTeX 很适合结构化排版。
+
+\section{结果讨论}
+请见第~\ref{sec:conclusion} 节的总结。
+
+\section{总结}
+\label{sec:conclusion}
+交叉引用和参考文献都可以自动编号。
+
+\printbibliography
+\end{document}
+\end{CodeBlock}
+
+\subsection*{简明中文解释}
+
+\begin{enumerate}
+  \item `hyperref` 会让目录、引用、链接更好用。
+  \item `biblatex` 是现代 LaTeX 中常见的参考文献方案，这里配合 `biber` 使用。
+  \item `\addbibresource{bib/references.bib}` 告诉 LaTeX 去哪里读参考文献数据库。
+  \item `\cite{lamport1994latex}` 里的 `lamport1994latex` 叫“引用键”，必须和 `.bib` 文件里一致。
+  \item `\label{sec:conclusion}` 给“总结”这一节起了一个内部名字，`\ref{sec:conclusion}` 会显示它的编号。
+  \item `\printbibliography` 会把最终真的被引用到的文献列出来。
+\end{enumerate}
+
+\subsection*{改什么、看什么}
+
+打开 `\texttt{examples/lesson07\_refs\_bib.tex}` 和 `\texttt{bib/references.bib}`，建议配合着改：
+
+\begin{itemize}
+  \item 先只改 `\cite{...}` 的键，观察文献列表如何变化。
+  \item 再改 `\label` 的名字，感受 `\ref` 和标签之间必须一一对应。
+\end{itemize}
+
+\subsection*{动手修改任务}
+
+\begin{enumerate}
+  \item 把 `\cite{lamport1994latex}` 改成 `\cite{knuth1984texbook}`，重新编译观察结果。
+  \item 在正文中再加一句，并额外引用 `goossens1997latex`。
+  \item 把 `sec:conclusion` 改成别的标签名，同时改正文中的 `\ref`。
+  \item 打开 `bib/references.bib`，给自己读一下每条文献的引用键是怎么写的。
+\end{enumerate}
+
+\subsection*{常见报错或易错点}
+
+\begin{itemize}
+  \item 如果引用显示成 `??` 或 `[?]`，先不要慌，通常是因为还没完成足够轮数的编译。
+  \item 如果 `\cite{...}` 里的键和 `.bib` 文件不一致，文献不会正常显示。
+  \item 如果本地编译找不到 `bib/references.bib`，请确认你的工作目录在项目根目录。
+\end{itemize}
+
+\subsection*{对应文件}
+
+本课建议直接修改：`\texttt{examples/lesson07\_refs\_bib.tex}` 和 `\texttt{bib/references.bib}`。

@@ -1,0 +1,21 @@
+\documentclass[12pt,a4paper]{ctexart} % 中文文档类
+\usepackage{graphicx} % 插图相关功能
+
+\begin{document}
+
+\begin{figure}[htbp] % 图环境，htbp 是常见位置建议
+  \centering % 图内容居中
+
+  % 先用一个空白方框模拟图片区域，这样不需要真实图片也能编译
+  \fbox{\rule{0pt}{4cm}\rule{0.7\linewidth}{0pt}}
+
+  % 如果你已经有真实图片，可以把上一行替换成下面这一行
+  % \includegraphics[width=0.7\linewidth]{assets/figure-01.png}
+
+  \caption{示意图占位框} % 图题
+  \label{fig:demo} % 图标签，供正文中的 \ref 使用
+\end{figure}
+
+图~\ref{fig:demo} 展示了一个占位框。 % 这里演示图引用
+
+\end{document}

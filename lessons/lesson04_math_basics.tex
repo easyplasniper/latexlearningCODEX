@@ -1,0 +1,70 @@
+\section{第 4 课：数学公式入门}
+
+\subsection*{本课目标}
+
+\begin{itemize}
+  \item 区分行内公式和独立公式。
+  \item 会写上标、分数、简单函数表达式。
+  \item 知道为什么数学模式要用特殊语法。
+\end{itemize}
+
+\subsection*{最小可运行示例}
+
+\begin{CodeBlock}
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage{amsmath} % 常用数学公式包
+
+\begin{document}
+行内公式：$a^2 + b^2 = c^2$。
+
+独立公式：
+\[
+E = mc^2
+\]
+
+带编号公式：
+\begin{equation}
+f(x) = \frac{x^2 + 1}{x + 1}
+\end{equation}
+\end{document}
+\end{CodeBlock}
+
+\subsection*{简明中文解释}
+
+\begin{enumerate}
+  \item `\usepackage{amsmath}` 是常用数学扩展包，初学阶段很值得直接带上。
+  \item `$ ... $` 表示行内公式，也就是公式嵌在一段话里。
+  \item `\[ ... \]` 表示单独成行的公式，默认不编号。
+  \item `equation` 环境会给公式自动编号。
+  \item `^` 表示上标，`\frac{分子}{分母}` 表示分数。
+\end{enumerate}
+
+\subsection*{改什么、看什么}
+
+打开 `\texttt{examples/lesson04\_math.tex}`，先只改公式内容：
+
+\begin{itemize}
+  \item 把 `c^2` 改成 `c^3`，观察上标变化。
+  \item 把 `\[` 改成普通文本，感受“数学模式”和“普通文字模式”的区别。
+\end{itemize}
+
+\subsection*{动手修改任务}
+
+\begin{enumerate}
+  \item 把第一个公式改成 `$x_1 + x_2 = 10$`，体验下标写法。
+  \item 把独立公式改成你熟悉的一个公式，例如 `y = kx + b`。
+  \item 把分数改成 `\frac{1}{2}` 或 `\frac{a+b}{c}`，观察排版。
+  \item 在正文里补一句“这个公式表示什么”。
+\end{enumerate}
+
+\subsection*{常见报错或易错点}
+
+\begin{itemize}
+  \item 少写一个 `$`，很容易导致后面大片内容都进入错误的数学模式。
+  \item `\frac` 必须跟两个花括号组，少一个就会报错。
+  \item 如果把 `^` 放在普通文本模式里，常会报语法错误或得到意外结果。
+\end{itemize}
+
+\subsection*{对应文件}
+
+本课建议直接修改：`\texttt{examples/lesson04\_math.tex}`。

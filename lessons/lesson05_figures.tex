@@ -1,0 +1,67 @@
+\section{第 5 课：图、图题与图引用}
+
+\subsection*{本课目标}
+
+\begin{itemize}
+  \item 认识 `figure` 环境的基本结构。
+  \item 学会写图题 `\caption` 和标签 `\label`。
+  \item 先用占位框练习，避免一开始就被图片路径卡住。
+\end{itemize}
+
+\subsection*{最小可运行示例}
+
+\begin{CodeBlock}
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage{graphicx} % 插图相关功能
+
+\begin{document}
+\begin{figure}[htbp] % 图环境
+  \centering % 图片居中
+  \fbox{\rule{0pt}{4cm}\rule{0.7\linewidth}{0pt}} % 先用空白方框模拟图片
+  \caption{示意图占位框} % 图题
+  \label{fig:demo} % 标签，供正文引用
+\end{figure}
+
+图~\ref{fig:demo} 展示了一个占位框。
+\end{document}
+\end{CodeBlock}
+
+\subsection*{简明中文解释}
+
+\begin{enumerate}
+  \item `graphicx` 是最常用的插图包。以后插真实图片时会用到它。
+  \item `figure` 环境表示“这是一个图”，LaTeX 会帮你管理编号。
+  \item `\centering` 让图内容居中。
+  \item `\fbox{...}` 这里只是临时占位，目的是先练结构，不依赖真实图片文件。
+  \item `\caption{...}` 会生成图题，`\label{...}` 让你可以在正文里用 `\ref` 引用它。
+\end{enumerate}
+
+\subsection*{改什么、看什么}
+
+打开 `\texttt{examples/lesson05\_figures.tex}` 后，建议这样试：
+
+\begin{itemize}
+  \item 先只改图题文字，看看正文中的“图 1”编号会不会变。
+  \item 再改 `\rule{0pt}{4cm}` 里的 `4cm`，观察占位框高度变化。
+\end{itemize}
+
+\subsection*{动手修改任务}
+
+\begin{enumerate}
+  \item 把图题改成与你的学习内容有关的名字。
+  \item 把标签从 `fig:demo` 改成别的名字，并同步修改正文中的 `\ref{...}`。
+  \item 把占位框宽度从 `0.7\linewidth` 改成 `0.5\linewidth`，观察版面变化。
+  \item 如果你已经有图片，把占位框替换成 `\includegraphics[width=0.7\linewidth]{assets/你的图片名}`。
+\end{enumerate}
+
+\subsection*{常见报错或易错点}
+
+\begin{itemize}
+  \item 如果使用真实图片时报 `File not found`，优先检查图片路径和扩展名。
+  \item `\label` 最好放在 `\caption` 后面，这样引用编号更稳定。
+  \item 如果正文里引用显示成 `??`，通常需要再编译一次。
+\end{itemize}
+
+\subsection*{对应文件}
+
+本课建议直接修改：`\texttt{examples/lesson05\_figures.tex}`。

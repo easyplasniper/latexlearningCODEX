@@ -1,0 +1,56 @@
+\section{第 1 课：第一次成功编译}
+
+\subsection*{本课目标}
+
+\begin{itemize}
+  \item 认识一个最小 LaTeX 文档长什么样。
+  \item 知道什么是“文档开始”和“文档结束”。
+  \item 能在 Overleaf 或本地成功编译出第一份 PDF。
+\end{itemize}
+
+\subsection*{最小可运行示例}
+
+\begin{CodeBlock}
+\documentclass[12pt,a4paper]{ctexart} % 使用 ctexart，直接支持中文
+\begin{document} % 正文从这里开始
+你好，LaTeX！ % 这一行会直接出现在 PDF 里
+\end{document} % 正文到这里结束
+\end{CodeBlock}
+
+\subsection*{简明中文解释}
+
+\begin{enumerate}
+  \item 第 1 行 `\documentclass[...]` 是“文档类型声明”。这里用 `ctexart`，因为它对中文更友好。
+  \item 第 2 行 `\begin{document}` 表示正文开始。从这一行之后写的内容，才会真正排进 PDF。
+  \item 第 3 行是普通文本。你输入什么，PDF 基本就会显示什么。
+  \item 第 4 行 `\end{document}` 表示正文结束。少了这一行，文档结构就不完整。
+\end{enumerate}
+
+\subsection*{改什么、看什么}
+
+先打开 `\texttt{examples/lesson01\_hello.tex}`，只改一处，再重新编译：
+
+\begin{itemize}
+  \item 把“你好，LaTeX！”改成你自己的句子，观察 PDF 正文如何变化。
+  \item 在同一行后面多写几个字，观察 LaTeX 如何自动排版。
+\end{itemize}
+
+\subsection*{动手修改任务}
+
+\begin{enumerate}
+  \item 把正文改成 “这是我的第一份 LaTeX 文档。”。
+  \item 再加一行自己的名字，观察两行文字的排版效果。
+  \item 把 `12pt` 改成 `11pt`，观察字号变化是否明显。
+\end{enumerate}
+
+\subsection*{常见报错或易错点}
+
+\begin{itemize}
+  \item 如果中文乱码，通常是因为编译器没有用 `XeLaTeX`。
+  \item 如果少写了 `\end{document}`，通常会出现结构不完整的报错。
+  \item 如果把命令写成 `documentclass`，忘了前面的反斜杠 `\`，会报 `Undefined control sequence`。
+\end{itemize}
+
+\subsection*{对应文件}
+
+本课建议直接修改：`\texttt{examples/lesson01\_hello.tex}`。

@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{ctexart} % 中文技术报告模板
+\usepackage[margin=2.2cm]{geometry} % 设置页边距
+\usepackage{amsmath} % 数学公式支持
+\usepackage{graphicx} % 图片支持
+\usepackage{hyperref} % 交叉引用与链接
+\usepackage[backend=biber,style=numeric]{biblatex} % 参考文献管理
+\addbibresource{bib/references.bib} % 读取项目里的文献库
+
+\title{用 LaTeX 记录一次简单实验} % 报告标题
+\author{你的名字} % 作者
+\date{\today} % 日期
+
+\begin{document}
+
+\maketitle % 生成标题区
+\tableofcontents % 自动生成目录
+
+\section{摘要} % 第 1 节
+本文演示如何用 LaTeX 组织一份短小的技术报告，包括公式、图、表、交叉引用和参考文献。
+
+\section{问题背景} % 第 2 节
+本报告以一个简单练习为例，目标是熟悉 LaTeX 的基本结构，并观察“改代码”和“改版面”的对应关系。
+
+\section{方法} % 第 3 节
+我们用一个简单线性关系举例：
+\begin{equation}
+  y = kx + b % 这里可以换成你自己的公式
+\end{equation}
+
+\section{结果} % 第 4 节
+
+\subsection{图示结果}
+\begin{figure}[htbp]
+  \centering
+
+  % 先用占位框，保证模板不依赖真实图片也能编译
+  \fbox{\rule{0pt}{4cm}\rule{0.7\linewidth}{0pt}}
+
+  % 如果你已经准备好图片，可以改成下面这一行
+  % \includegraphics[width=0.7\linewidth]{assets/figure-01.png}
+
+  \caption{实验结果示意图} % 图题
+  \label{fig:result} % 图标签
+\end{figure}
+
+图~\ref{fig:result} 展示了结果示意。 % 正文中引用图编号
+
+\subsection{表格结果}
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lcc}
+    \hline
+    指标 & 方案A & 方案B \\
+    \hline
+    时间成本 & 10分钟 & 8分钟 \\
+    错误次数 & 3次 & 1次 \\
+    满意度 & 7分 & 9分 \\
+    \hline
+  \end{tabular}
+  \caption{结果对比表} % 表题
+  \label{tab:result} % 表标签
+\end{table}
+
+表~\ref{tab:result} 给出了一个简单对比。 % 正文中引用表编号
+
+\section{讨论} % 第 5 节
+如果需要引用文献，可以写成文献~\cite{lamport1994latex} 或文献~\cite{knuth1984texbook}。
+
+\section{结论} % 第 6 节
+通过这份模板，你已经把标题、章节、公式、图、表、交叉引用和参考文献放到了同一个文档里。
+
+\printbibliography % 输出参考文献列表
+
+\end{document}

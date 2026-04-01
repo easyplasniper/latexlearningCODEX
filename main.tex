@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper]{ctexart} % 使用 ctexart，直接支持中文
+\usepackage[margin=2.2cm]{geometry} % 设置页边距
+\usepackage{xcolor} % 颜色支持
+\usepackage{hyperref} % 超链接
+\usepackage{enumitem} % 更紧凑的列表
+\usepackage{longtable} % 跨页表格
+\usepackage{array} % 表格列格式增强
+\usepackage{fancyvrb} % 更适合展示代码块
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  urlcolor=blue!60!black
+}
+
+\setlist{nosep} % 减少列表上下留白
+\setlength{\parindent}{2em} % 首行缩进
+\setlength{\parskip}{0.4em} % 段间距
+
+% 统一定义代码块环境，课程文件里直接复用
+\DefineVerbatimEnvironment{CodeBlock}{Verbatim}{
+  fontsize=\small,
+  frame=single,
+  breaklines=true
+}
+
+\title{LaTeX / Overleaf 零基础动手课程}
+\author{latexlearningCODEX}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{这份项目怎么用}
+
+这不是一本偏理论的 LaTeX 教材，而是一套“边改边编译”的练习型项目。
+建议你先编译本文件，看清课程顺序；然后打开对应的 `examples/` 示例文件，一边修改，一边重新编译观察结果。
+
+\section*{学习节奏建议}
+
+\begin{enumerate}
+  \item 先原样编译一次，不要急着改。
+  \item 每次只改一个点，例如标题、一个命令、一个公式或一个表格单元格。
+  \item 修改后立刻重新编译。
+  \item 把注意力放在“哪一行代码变化，导致 PDF 哪一处变化”。
+\end{enumerate}
+
+\section*{文件导航}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.17\linewidth} >{\raggedright\arraybackslash}p{0.33\linewidth} >{\raggedright\arraybackslash}p{0.40\linewidth}}
+\textbf{课程} & \textbf{讲义文件} & \textbf{建议修改的示例文件} \\
+\hline
+第 1 课 & lessons/lesson01\_first\_document.tex & examples/lesson01\_hello.tex \\
+第 2 课 & lessons/lesson02\_document\_structure.tex & examples/lesson02\_structure.tex \\
+第 3 课 & lessons/lesson03\_sections\_and\_text.tex & examples/lesson03\_sections\_text.tex \\
+第 4 课 & lessons/lesson04\_math\_basics.tex & examples/lesson04\_math.tex \\
+第 5 课 & lessons/lesson05\_figures.tex & examples/lesson05\_figures.tex \\
+第 6 课 & lessons/lesson06\_tables.tex & examples/lesson06\_tables.tex \\
+第 7 课 & lessons/lesson07\_references\_and\_bib.tex & examples/lesson07\_refs\_bib.tex \\
+第 8 课 & lessons/lesson08\_final\_mini\_report.tex & examples/final\_report\_template.tex \\
+\end{longtable}
+
+\tableofcontents
+\newpage
+
+\input{lessons/lesson01_first_document}
+\input{lessons/lesson02_document_structure}
+\input{lessons/lesson03_sections_and_text}
+\input{lessons/lesson04_math_basics}
+\input{lessons/lesson05_figures}
+\input{lessons/lesson06_tables}
+\input{lessons/lesson07_references_and_bib}
+\input{lessons/lesson08_final_mini_report}
+
+\end{document}

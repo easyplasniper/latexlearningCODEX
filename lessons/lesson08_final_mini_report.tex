@@ -1,0 +1,82 @@
+\section{第 8 课：完成一个小型技术报告}
+
+\subsection*{本课目标}
+
+\begin{itemize}
+  \item 把前 7 课的内容组合起来。
+  \item 能读懂并修改一份简短技术报告模板。
+  \item 独立完成标题、章节、公式、图、表、引用和参考文献。
+\end{itemize}
+
+\subsection*{最小可运行示例}
+
+\begin{CodeBlock}
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{bib/references.bib}
+
+\title{用 LaTeX 记录一次简单实验}
+\author{你的名字}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{背景}
+这是背景介绍。
+
+\section{方法}
+核心公式为
+\[
+y = kx + b
+\]
+
+\section{结论}
+参考文献示例：\cite{lamport1994latex}。
+
+\printbibliography
+\end{document}
+\end{CodeBlock}
+
+\subsection*{简明中文解释}
+
+\begin{enumerate}
+  \item 这份例子不是为了教新命令，而是为了把前面学过的命令组合起来。
+  \item 你会同时看到标题信息、章节、公式、文献引用等多个部分。
+  \item 真正的完整模板已经放在 `\texttt{examples/final\_report\_template.tex}`，里面还额外加入了图和表。
+  \item 最终目标不是“抄一遍模板”，而是把模板改成你自己的报告。
+\end{enumerate}
+
+\subsection*{改什么、看什么}
+
+打开 `\texttt{examples/final\_report\_template.tex}` 后，建议按下面顺序观察：
+
+\begin{itemize}
+  \item 先只改标题、作者、摘要，确认整体框架没问题。
+  \item 再逐节替换内容，每替换一节就编译一次。
+  \item 最后再处理图、表和参考文献。
+\end{itemize}
+
+\subsection*{动手修改任务}
+
+\begin{enumerate}
+  \item 把模板标题改成你自己的主题，例如某次实验、某个工具或某次课程作业。
+  \item 把“方法”一节里的公式换成和你主题更相关的内容。
+  \item 把模板里的图题、表题、引用都改成与你的内容匹配的版本。
+  \item 对照 `exercises/final_report_task.md` 完成自检。
+\end{enumerate}
+
+\subsection*{常见报错或易错点}
+
+\begin{itemize}
+  \item 内容一多后，最常见的问题是少一个花括号、漏一个 `\end{...}` 或标签名没同步修改。
+  \item 如果图和表的正文引用显示成 `??`，请再次编译。
+  \item 如果参考文献没出现，先检查是否真的写了 `\cite{...}`，再检查编译轮数。
+\end{itemize}
+
+\subsection*{对应文件}
+
+本课建议直接修改：`\texttt{examples/final\_report\_template.tex}`，并配合 `\texttt{exercises/final\_report\_task.md}` 完成综合练习。

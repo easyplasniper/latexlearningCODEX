@@ -1,0 +1,22 @@
+\documentclass[12pt,a4paper]{ctexart} % 中文文档类
+
+\begin{document}
+
+\begin{table}[htbp] % 表格环境
+  \centering % 整个表格居中
+  \begin{tabular}{lcc} % 三列：左对齐、居中、居中
+    \hline
+    项目 & 第1周 & 第2周 \\ % & 分隔单元格，\\ 结束一行
+    \hline
+    阅读资料 & 2小时 & 3小时 \\
+    写笔记 & 1页 & 2页 \\
+    编译练习 & 3次 & 5次 \\
+    \hline
+  \end{tabular}
+  \caption{学习记录表} % 表题
+  \label{tab:study} % 表标签
+\end{table}
+
+表~\ref{tab:study} 给出了一份简单记录。 % 表编号会自动引用
+
+\end{document}

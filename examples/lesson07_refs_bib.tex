@@ -1,0 +1,20 @@
+\documentclass[12pt,a4paper]{ctexart} % 中文文档类
+\usepackage{hyperref} % 让引用和目录更友好
+\usepackage[backend=biber,style=numeric]{biblatex} % 使用 biblatex 管理参考文献
+\addbibresource{bib/references.bib} % 从项目根目录的 bib 文件夹读取文献
+
+\begin{document}
+
+\section{实验说明} % 第一节
+如文献~\cite{lamport1994latex} 所示，LaTeX 很适合结构化排版。 % \cite 用来插入文献引用
+
+\section{结果讨论} % 第二节
+请见第~\ref{sec:conclusion} 节的总结。 % \ref 用来引用后面打标签的章节编号
+
+\section{总结}
+\label{sec:conclusion} % 给本节一个标签名
+交叉引用和参考文献都可以自动编号。 % 这句只是普通正文
+
+\printbibliography % 输出本文件实际引用到的文献
+
+\end{document}

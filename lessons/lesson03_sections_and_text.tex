@@ -1,0 +1,67 @@
+\section{第 3 课：标题层级与文字格式}
+
+\subsection*{本课目标}
+
+\begin{itemize}
+  \item 学会使用 `\section` 和 `\subsection`。
+  \item 学会最常见的文字强调命令。
+  \item 观察段落、换行、层级标题的区别。
+\end{itemize}
+
+\subsection*{最小可运行示例}
+
+\begin{CodeBlock}
+\documentclass[12pt,a4paper]{ctexart} % 继续使用中文友好的文档类
+\begin{document}
+
+\section{项目背景} % 一级标题
+这是普通文字。这里有\textbf{加粗}、\textit{斜体}和\underline{下划线}。
+
+\subsection{今天完成什么} % 二级标题
+第一点。\\ % 强制换行，先体验一下效果
+第二点。
+
+\section{结论}
+本页练习标题层级和基本文字格式。
+
+\end{document}
+\end{CodeBlock}
+
+\subsection*{简明中文解释}
+
+\begin{enumerate}
+  \item `\section{...}` 用来创建一级标题，通常表示大的部分。
+  \item `\subsection{...}` 是二级标题，表示一级标题下面的子部分。
+  \item `\textbf{...}` 会加粗文字，`\textit{...}` 会变成斜体，`\underline{...}` 会加下划线。
+  \item `\\` 表示强制换行，但它不等于“新段落”。新段落通常靠空一行实现。
+\end{enumerate}
+
+\subsection*{改什么、看什么}
+
+打开 `\texttt{examples/lesson03\_sections\_text.tex}`，优先观察两件事：
+
+\begin{itemize}
+  \item 改 `\section{}` 的内容，标题样式会保持不变，只改文字。
+  \item 把 `\\` 改成空一行，比较“换行”和“分段”的视觉区别。
+\end{itemize}
+
+\subsection*{动手修改任务}
+
+\begin{enumerate}
+  \item 把“项目背景”改成你自己的主题。
+  \item 在正文里再加一个 `\subsection{}`，并补 1 到 2 句说明文字。
+  \item 把一段普通文字分别改成加粗、斜体、下划线，观察三种强调方式的差异。
+  \item 删除 `\\`，改成空一行，看看版面变化。
+\end{enumerate}
+
+\subsection*{常见报错或易错点}
+
+\begin{itemize}
+  \item `\section{标题` 如果少了右花括号 `}`，后面往往会连带报错。
+  \item 不要把 `\\` 当成“万能排版工具”，它更适合局部换行，不适合代替段落结构。
+  \item 如果命令名字拼错，比如写成 `\textdbf`，会报 `Undefined control sequence`。
+\end{itemize}
+
+\subsection*{对应文件}
+
+本课建议直接修改：`\texttt{examples/lesson03\_sections\_text.tex}`。

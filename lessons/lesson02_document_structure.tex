@@ -1,0 +1,64 @@
+\section{第 2 课：认识文档结构}
+
+\subsection*{本课目标}
+
+\begin{itemize}
+  \item 区分“导言区”和“正文区”。
+  \item 学会设置标题、作者、日期。
+  \item 理解 `\maketitle` 的作用。
+\end{itemize}
+
+\subsection*{最小可运行示例}
+
+\begin{CodeBlock}
+\documentclass[12pt,a4paper]{ctexart} % 文档类型
+\title{我的第一份 LaTeX 文档} % 标题
+\author{张三} % 作者
+\date{\today} % 日期，\today 会自动生成今天的日期
+
+\begin{document} % 正文开始
+\maketitle % 把上面设置的标题、作者、日期排出来
+
+这是正文第一段。
+
+这是正文第二段。
+\end{document} % 正文结束
+\end{CodeBlock}
+
+\subsection*{简明中文解释}
+
+\begin{enumerate}
+  \item `\title{...}`、`\author{...}`、`\date{...}` 都写在 `\begin{document}` 前面，所以它们属于导言区设置。
+  \item `\today` 是一个现成命令，表示“今天的日期”。
+  \item `\maketitle` 会把标题、作者、日期排版出来。如果删掉它，前面的信息不会自动显示。
+  \item 两段正文之间空一行，LaTeX 会把它们当成两个段落。
+\end{enumerate}
+
+\subsection*{改什么、看什么}
+
+打开 `\texttt{examples/lesson02\_structure.tex}` 后，先只改标题，再编译：
+
+\begin{itemize}
+  \item 看标题区域是否立刻变化。
+  \item 删掉 `\maketitle` 再编译，观察标题区为什么消失。
+\end{itemize}
+
+\subsection*{动手修改任务}
+
+\begin{enumerate}
+  \item 把标题改成你自己的主题，例如“数据分析练习记录”。
+  \item 把作者改成自己的名字，日期改成固定文本，例如 `2026-04-01`。
+  \item 在正文中再增加一个新段落，写一句你想用 LaTeX 做什么。
+\end{enumerate}
+
+\subsection*{常见报错或易错点}
+
+\begin{itemize}
+  \item 正文文字不要直接写在 `\begin{document}` 之前，否则位置和作用会让初学者混乱。
+  \item `\title{}` 和 `\author{}` 的花括号要成对出现。
+  \item 如果标题不显示，先检查是不是忘了写 `\maketitle`。
+\end{itemize}
+
+\subsection*{对应文件}
+
+本课建议直接修改：`\texttt{examples/lesson02\_structure.tex}`。

@@ -1,0 +1,74 @@
+\section{第 6 课：表格入门}
+
+\subsection*{本课目标}
+
+\begin{itemize}
+  \item 认识 `table` 和 `tabular` 的分工。
+  \item 学会设置列对齐方式。
+  \item 能在正文中引用表格编号。
+\end{itemize}
+
+\subsection*{最小可运行示例}
+
+\begin{CodeBlock}
+\documentclass[12pt,a4paper]{ctexart}
+
+\begin{document}
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lcc} % l 左对齐，c 居中
+    \hline
+    项目 & 第1周 & 第2周 \\
+    \hline
+    阅读资料 & 2小时 & 3小时 \\
+    写笔记 & 1页 & 2页 \\
+    编译练习 & 3次 & 5次 \\
+    \hline
+  \end{tabular}
+  \caption{学习记录表}
+  \label{tab:study}
+\end{table}
+
+表~\ref{tab:study} 给出了一份简单记录。
+\end{document}
+\end{CodeBlock}
+
+\subsection*{简明中文解释}
+
+\begin{enumerate}
+  \item `table` 环境负责“这是一个表格对象”，会管理题注和编号。
+  \item `tabular` 环境负责“表格里面怎么排列单元格”。
+  \item `{lcc}` 表示一共 3 列，第 1 列左对齐，后 2 列居中。
+  \item 每一行用 `\\` 结束，每个单元格之间用 `&` 分隔。
+  \item `\caption` 和 `\label` 的用法和图环境非常相似。
+\end{enumerate}
+
+\subsection*{改什么、看什么}
+
+打开 `\texttt{examples/lesson06\_tables.tex}`，先试最小修改：
+
+\begin{itemize}
+  \item 只改一个单元格内容，观察 PDF 表格局部变化。
+  \item 把列格式从 `{lcc}` 改成 `{ccc}`，观察第一列对齐是否变化。
+\end{itemize}
+
+\subsection*{动手修改任务}
+
+\begin{enumerate}
+  \item 把表题改成你自己的学习记录或实验结果。
+  \item 增加一行新数据，例如“整理错题”。
+  \item 把一列对齐方式改成 `r`，观察右对齐效果。
+  \item 改一下标签名，并同步更新正文里的 `\ref`。
+\end{enumerate}
+
+\subsection*{常见报错或易错点}
+
+\begin{itemize}
+  \item `Extra alignment tab has been changed to \textbackslash cr` 通常表示某一行的 `&` 数量不对。
+  \item 如果列格式是 3 列，就不要在某一行写出 4 列数据。
+  \item 如果引用显示成 `??`，通常说明需要再次编译，或者 `\label` 名字写错了。
+\end{itemize}
+
+\subsection*{对应文件}
+
+本课建议直接修改：`\texttt{examples/lesson06\_tables.tex}`。
